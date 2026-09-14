@@ -1,0 +1,150 @@
+@import "tailwindcss";
+
+:root {
+  --base:        #0B0F19;
+  --surface:     #0D1526;
+  --surface-2:   #112240;
+  --cyan:        #00D4FF;
+  --purple:      #9B59F5;
+  --text:        #C8D6EF;
+  --muted:       #4A6080;
+  --border:      rgba(0, 212, 255, 0.12);
+  --border-dim:  rgba(255,255,255,0.06);
+  --glow-cyan:   0 0 24px rgba(0, 212, 255, 0.18);
+  --glow-purple: 0 0 24px rgba(155, 89, 245, 0.18);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: var(--base);
+  color: var(--text);
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 16px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+.mono { font-family: 'JetBrains Mono', monospace; }
+
+/* Glass card */
+.glass {
+  background: rgba(13, 21, 38, 0.72);
+  border: 1px solid var(--border-dim);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.glass-cyan {
+  border-color: var(--border);
+}
+
+/* Gradient text */
+.grad-text {
+  background: linear-gradient(110deg, var(--cyan) 0%, var(--purple) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Section spacing */
+.section {
+  padding: 96px 0;
+}
+
+.section-inner {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Section heading */
+.section-heading {
+  font-size: clamp(26px, 4vw, 36px);
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 48px;
+}
+
+.section-heading span {
+  display: inline-block;
+  width: 32px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--cyan), var(--purple));
+  border-radius: 2px;
+  vertical-align: middle;
+  margin-right: 14px;
+}
+
+/* Glow hero scan */
+@keyframes scanGlow {
+  0%   { left: -100%; opacity: 0; }
+  10%  { opacity: 1; }
+  90%  { opacity: 1; }
+  100% { left: 110%; opacity: 0; }
+}
+
+.hero-name-wrap {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.hero-scan {
+  position: absolute;
+  top: 0; bottom: 0;
+  width: 60px;
+  background: linear-gradient(90deg, transparent, rgba(0,212,255,0.35), transparent);
+  animation: scanGlow 2s ease 0.4s forwards;
+  pointer-events: none;
+}
+
+/* Cursor blink */
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+.cursor {
+  display: inline-block;
+  width: 2px; height: 1em;
+  background: var(--cyan);
+  margin-left: 2px;
+  vertical-align: middle;
+  animation: blink 1s step-end infinite;
+}
+
+/* Timeline */
+.timeline-spine {
+  position: absolute;
+  left: 15px; top: 24px; bottom: 0;
+  width: 1px;
+  background: linear-gradient(180deg, var(--cyan), var(--purple) 80%, transparent);
+}
+
+/* Tag pill */
+.tag {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 4px;
+  background: rgba(0, 212, 255, 0.08);
+  border: 1px solid rgba(0, 212, 255, 0.18);
+  color: var(--cyan);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+.tag-purple {
+  background: rgba(155, 89, 245, 0.08);
+  border-color: rgba(155, 89, 245, 0.22);
+  color: var(--purple);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: var(--base); }
+::-webkit-scrollbar-thumb { background: var(--surface-2); border-radius: 3px; }
+
+/* Responsive */
+@media (max-width: 640px) {
+  .section { padding: 64px 0; }
+}
