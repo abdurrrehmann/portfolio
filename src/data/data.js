@@ -1,4 +1,4 @@
-import avatarImage from '../assets/hero.png'
+import avatarImage from '../assets/profile.jpeg'
 
 // ─── PERSONAL ────────────────────────────────────────────────────────────────
 export const personal = {
