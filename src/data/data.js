@@ -100,7 +100,7 @@ export const experience = [
 export const projects = [
   {
     name: 'IsharaAI – AI-Powered Sign Language Translation Application',
-    category: { 'App Development': 'Mobile App', 'Computer Vision': 'CV' },
+    category: 'App Development / Computer Vision',
     description:
       'Final Year Project. Developed a real-time sign language–to–text translation system using MediaPipe Hands for gesture extraction and a BiLSTM-based deep learning model trained on a custom gesture dataset. Built a mobile-first application with real-time feedback, integrating end-to-end deep learning workflows.',
     highlight: '🏆 Secured PKR 100,000 in university funding for innovation and further development.',
