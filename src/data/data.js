@@ -7,7 +7,7 @@ export const personal = {
   tagline: 'Building intelligent systems — from raw pixels to production models.',
   email: 'abdurrrehmannn@gmail.com',
   github: 'https://github.com/abdurrrehmann/',
-  linkedin: 'https://linkedin.com/in/abdurrrehmannn',
+  linkedin: 'https://www.linkedin.com/in/abdur-rehman-09a512253',
   avatar: avatarImage,
 }
 
